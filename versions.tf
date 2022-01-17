@@ -11,11 +11,6 @@ terraform {
 provider "aws" {
   region = var.region
   default_tags {
-    tags = {
-      Environment = "Test"
-      Owner       = "Joshua"
-      Project     = "checkout.com DevOps Challenge"
-      repo        = "git@github.com:joshuamkite/terraform-aws-static-website-s3-cloudfront-joshuamkite.com.git"
-    }
+    tags = var.tags
   }
 }
