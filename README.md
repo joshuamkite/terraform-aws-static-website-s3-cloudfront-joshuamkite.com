@@ -4,6 +4,9 @@ This Terraform plan uses a forked public module [https://github.com/joshuamkite/
 
 Given the brevity of this plan, terraform variables and data are not in separate files. and variables are defaulted rather than interpolated. Although an S3 backend is advised (and has been used in my case) it is not included in this repository for reasons of security. Outputs and site content terraform files *are* in separate files for ease of reference or change. 
 
+The sample website deployed with the default values here may be seen at 
+[www.checkout.joshuamkite.com](www.checkout.joshuamkite.com)
+
 ## Requirements
 
 | Name | Version |
