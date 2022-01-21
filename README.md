@@ -39,6 +39,7 @@ The sample website deployed with the default values here may be seen at
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | n/a | `string` | `"joshuamkite.com"` | no |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"eu-west-1"` | no |
 | <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | n/a | `string` | `"checkout"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | n/a | `map(string)` | <pre>{<br>  "Environment": "Test",<br>  "Owner": "Joshua",<br>  "Project": "DevOps Challenge",<br>  "repo": "git@github.com:joshuamkite/terraform-aws-static-website-s3-cloudfront-joshuamkite.com.git"<br>}</pre> | no |
 
 ## Outputs
 
