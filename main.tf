@@ -16,7 +16,7 @@ variable "tags" {
   default = {
     Environment = "Test"
     Owner       = "Joshua"
-    Project     = "checkout.com DevOps Challenge"
+    Project     = "DevOps Challenge"
     repo        = "git@github.com:joshuamkite/terraform-aws-static-website-s3-cloudfront-joshuamkite.com.git"
   }
 }
