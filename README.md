@@ -1,6 +1,10 @@
 # terraform-aws-static-website-s3-cloudfront-joshuamkite.com
 
-This Terraform deploys resources for a website hosting a sample static webpage with text and an image using AWS S3 and Cloudfront with TLS and a public DNS entry together with a suitable ACM certificate and validation. ## Requirements
+This Terraform deploys resources for a website hosting a sample static webpage with text and an image using AWS S3 and Cloudfront with TLS and a public DNS entry together with a suitable ACM certificate and validation. 
+
+## N.B. S3 Backend not commited to public repo for security reasons
+
+## Requirements
 
 | Name | Version |
 |------|---------|
