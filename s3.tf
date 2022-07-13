@@ -8,7 +8,7 @@ data "aws_iam_policy_document" "this" {
     ]
 
     resources = [
-      "arn:aws:s3:::${var.domain_name}/*",
+     "${aws_s3_bucket.this.arn}/*",
     ]
 
     principals {

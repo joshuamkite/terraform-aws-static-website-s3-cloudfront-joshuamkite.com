@@ -12,7 +12,7 @@ resource "aws_acm_certificate" "joshuamkite_com" {
 
 data "aws_route53_zone" "domain_name" {
   provider     = aws.us-east-1
-  name         = var.domain_name #var.hosted_zone
+  name         = var.domain_name
   private_zone = false
 }
 

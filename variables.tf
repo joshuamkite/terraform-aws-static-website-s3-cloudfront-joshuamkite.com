@@ -2,10 +2,6 @@ variable "domain_name" {
   default = "joshuamkite.com"
 }
 
-variable "subdomain" {
-  default = ""
-}
-
 variable "region" {
   default = "eu-west-1"
 }
@@ -20,24 +16,9 @@ variable "tags" {
   }
 }
 
-variable "hosted_zone" {
-  default     = null
-  description = "Route53 hosted zone"
-}
-
-variable "acm_certificate_domain" {
-  default     = null
-  description = "Domain of the ACM certificate"
-}
-
 variable "price_class" {
   default     = "PriceClass_100" // Only US,Canada,Europe
   description = "CloudFront distribution price class"
-}
-
-variable "use_default_domain" {
-  default     = false
-  description = "Use CloudFront website address without Route53 and ACM certificate"
 }
 
 # All values for the TTL are important when uploading static content that changes
