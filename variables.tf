@@ -37,3 +37,9 @@ variable "cloudfront_max_ttl" {
   default     = 31536000
   description = "The maximum TTL for the cloudfront cache"
 }
+
+variable "deploy_sample_content" {
+  type        = bool
+  default     = false
+  description = "whether or not to deploy sample content"
+}

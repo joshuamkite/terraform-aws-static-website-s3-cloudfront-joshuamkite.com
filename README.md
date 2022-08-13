@@ -1,6 +1,6 @@
 # terraform-aws-static-website-s3-cloudfront-joshuamkite.com
 
-This Terraform deploys resources for a website hosting a sample static webpage with text and an image using AWS S3 and Cloudfront with TLS and a public DNS entry together with a suitable ACM certificate and validation. 
+This Terraform deploys resources for my static website using AWS S3 and Cloudfront with TLS and a public DNS entry together with a suitable ACM certificate and validation. The apex domain is aliased to the www subdomain. This is a useful base from which to deploy website content with e.g. Hugo. Optionally a sample webpage with text and an image may be deployed to demonstrate that the website is working 
 
 ## N.B. S3 Backend not commited to public repo for security reasons
 
@@ -49,6 +49,7 @@ No modules.
 | <a name="input_cloudfront_default_ttl"></a> [cloudfront\_default\_ttl](#input\_cloudfront\_default\_ttl) | The default TTL for the cloudfront cache | `number` | `86400` | no |
 | <a name="input_cloudfront_max_ttl"></a> [cloudfront\_max\_ttl](#input\_cloudfront\_max\_ttl) | The maximum TTL for the cloudfront cache | `number` | `31536000` | no |
 | <a name="input_cloudfront_min_ttl"></a> [cloudfront\_min\_ttl](#input\_cloudfront\_min\_ttl) | The minimum TTL for the cloudfront cache | `number` | `0` | no |
+| <a name="input_deploy_sample_content"></a> [deploy\_sample\_content](#input\_deploy\_sample\_content) | whether or not to deploy sample content | `bool` | `false` | no |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | n/a | `string` | `"joshuamkite.com"` | no |
 | <a name="input_price_class"></a> [price\_class](#input\_price\_class) | CloudFront distribution price class | `string` | `"PriceClass_100"` | no |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"eu-west-1"` | no |

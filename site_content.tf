@@ -1,4 +1,5 @@
 resource "aws_s3_object" "index_html" {
+  count        = var.deploy_sample_content == true ? 1 : 0
   bucket       = aws_s3_bucket.this.id
   key          = "index.html"
   source       = "${path.module}/site_content/index.html"
@@ -7,6 +8,7 @@ resource "aws_s3_object" "index_html" {
 }
 
 resource "aws_s3_object" "image" {
+  count        = var.deploy_sample_content == true ? 1 : 0
   bucket       = aws_s3_bucket.this.id
   key          = "Logo_Grey.png"
   source       = "${path.module}/site_content/Logo_Grey.png"
