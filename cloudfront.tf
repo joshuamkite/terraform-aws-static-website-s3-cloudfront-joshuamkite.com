@@ -57,9 +57,9 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   dynamic "viewer_certificate" {
-    for_each = [aws_acm_certificate.joshuamkite_com.id]
+    for_each = [aws_acm_certificate.domain_name.id]
     content {
-      acm_certificate_arn      = aws_acm_certificate.joshuamkite_com.arn
+      acm_certificate_arn      = aws_acm_certificate.domain_name.arn
       ssl_support_method       = "sni-only"
       minimum_protocol_version = "TLSv1.2_2019"
     }

@@ -7,7 +7,8 @@ output "cloudfront_dist_id" {
 }
 
 output "s3_domain_name" {
-  value = aws_s3_bucket.this.website_domain
+  # value = aws_s3_bucket.this.website_domain
+value=data.aws_s3_bucket.this.website_domain
 }
 
 output "website_address" {
@@ -23,5 +24,5 @@ output "s3_bucket_name" {
 }
 
 output "aws_acm_certificate_id" {
-  value = aws_acm_certificate.joshuamkite_com.id
+  value = aws_acm_certificate.domain_name.id
 }

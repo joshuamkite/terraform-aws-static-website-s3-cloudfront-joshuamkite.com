@@ -1,4 +1,4 @@
-resource "aws_acm_certificate" "joshuamkite_com" {
+resource "aws_acm_certificate" "domain_name" {
   provider    = aws.us-east-1
   domain_name = var.domain_name
   subject_alternative_names = [
@@ -18,7 +18,7 @@ data "aws_route53_zone" "domain_name" {
 
 resource "aws_route53_record" "validation" {
   for_each = {
-    for dvo in aws_acm_certificate.joshuamkite_com.domain_validation_options : dvo.domain_name => {
+    for dvo in aws_acm_certificate.domain_name.domain_validation_options : dvo.domain_name => {
       name   = dvo.resource_record_name
       record = dvo.resource_record_value
       type   = dvo.resource_record_type
@@ -32,13 +32,14 @@ resource "aws_route53_record" "validation" {
   zone_id         = data.aws_route53_zone.domain_name.zone_id
 }
 
-resource "aws_acm_certificate_validation" "joshuamkite_com" {
+resource "aws_acm_certificate_validation" "domain_name" {
   provider                = aws.us-east-1
-  certificate_arn         = aws_acm_certificate.joshuamkite_com.arn
+  certificate_arn         = aws_acm_certificate.domain_name.arn
   validation_record_fqdns = [for record in aws_route53_record.validation : record.fqdn]
 }
 
-resource "aws_route53_record" "www_joshuamkite_com" {
+# Redirecct 'www' subdomain to apex
+resource "aws_route53_record" "www_domain" {
   type    = "CNAME"
   zone_id = data.aws_route53_zone.domain_name.zone_id
   name    = "www.${var.domain_name}"
@@ -46,7 +47,7 @@ resource "aws_route53_record" "www_joshuamkite_com" {
   ttl     = "300"
 }
 
-resource "aws_route53_record" "joshuamkite_com" {
+resource "aws_route53_record" "domain" {
   type    = "A"
   zone_id = data.aws_route53_zone.domain_name.zone_id
   name    = var.domain_name
