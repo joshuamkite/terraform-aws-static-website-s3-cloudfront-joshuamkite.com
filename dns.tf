@@ -39,7 +39,7 @@ resource "aws_acm_certificate_validation" "domain_name" {
 }
 
 # Redirecct 'www' subdomain to apex
-resource "aws_route53_record" "www_domain" {
+resource "aws_route53_record" "www_domain_name" {
   type    = "CNAME"
   zone_id = data.aws_route53_zone.domain_name.zone_id
   name    = "www.${var.domain_name}"
@@ -47,7 +47,7 @@ resource "aws_route53_record" "www_domain" {
   ttl     = "300"
 }
 
-resource "aws_route53_record" "domain" {
+resource "aws_route53_record" "domain_name" {
   type    = "A"
   zone_id = data.aws_route53_zone.domain_name.zone_id
   name    = var.domain_name
