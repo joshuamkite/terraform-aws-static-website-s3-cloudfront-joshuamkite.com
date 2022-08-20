@@ -7,8 +7,7 @@ output "cloudfront_dist_id" {
 }
 
 output "s3_domain_name" {
-  # value = aws_s3_bucket.this.website_domain
-value=data.aws_s3_bucket.this.website_domain
+  value = data.aws_s3_bucket.this.website_domain
 }
 
 output "website_address" {

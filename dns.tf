@@ -38,7 +38,7 @@ resource "aws_acm_certificate_validation" "domain_name" {
   validation_record_fqdns = [for record in aws_route53_record.validation : record.fqdn]
 }
 
-# Redirecct 'www' subdomain to apex
+# Redirect 'www' subdomain to apex
 resource "aws_route53_record" "www_domain_name" {
   type    = "CNAME"
   zone_id = data.aws_route53_zone.domain_name.zone_id

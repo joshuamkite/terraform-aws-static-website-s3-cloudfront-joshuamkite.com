@@ -43,5 +43,5 @@ resource "aws_s3_bucket_versioning" "this" {
 }
 
 data "aws_s3_bucket" "this" {
-  bucket =  var.domain_name
+  bucket = var.domain_name
 }
