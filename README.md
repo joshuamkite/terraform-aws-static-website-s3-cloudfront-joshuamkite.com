@@ -2,7 +2,7 @@
 
 This Terraform deploys resources for my static website using AWS S3 and Cloudfront with TLS and a public DNS entry together with a suitable ACM certificate and validation. The apex domain is aliased to the www subdomain. This is a useful base from which to deploy website content with e.g. Hugo. Optionally a sample webpage with text and an image may be deployed to demonstrate that the website is working 
 
-## N.B. S3 Backend not commited to public repo for security reasons
+## N.B. S3 Backend not committed to public repo for security reasons
 
 ## Requirements
 
