@@ -41,7 +41,3 @@ resource "aws_s3_bucket_versioning" "this" {
     status = "Enabled"
   }
 }
-
-data "aws_s3_bucket" "this" {
-  bucket = var.domain_name
-}

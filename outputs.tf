@@ -6,10 +6,6 @@ output "cloudfront_dist_id" {
   value = aws_cloudfront_distribution.s3_distribution.id
 }
 
-output "s3_domain_name" {
-  value = data.aws_s3_bucket.this.website_domain
-}
-
 output "website_address" {
   value = var.domain_name
 }
