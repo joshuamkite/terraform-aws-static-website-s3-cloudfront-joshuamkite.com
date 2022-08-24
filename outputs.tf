@@ -1,23 +1,24 @@
+
 output "cloudfront_domain_name" {
-  value = aws_cloudfront_distribution.s3_distribution.domain_name
+  value = module.static-website-s3-cloudfront-acm.cloudfront_domain_name
 }
 
-output "cloudfront_dist_id" {
-  value = aws_cloudfront_distribution.s3_distribution.id
-}
-
-output "website_address" {
-  value = var.domain_name
+output "cloudfront_distribution_id" {
+  value = module.static-website-s3-cloudfront-acm.cloudfront_distribution_id
 }
 
 output "s3_bucket_arn" {
-  value = aws_s3_bucket.this.arn
+  value = module.static-website-s3-cloudfront-acm.s3_bucket_arn
 }
 
 output "s3_bucket_name" {
-  value = aws_s3_bucket.this.id
+  value = module.static-website-s3-cloudfront-acm.s3_bucket_name
 }
 
-output "aws_acm_certificate_id" {
-  value = aws_acm_certificate.domain_name.id
+output "acm_certificate_id" {
+  value = module.static-website-s3-cloudfront-acm.acm_certificate_id
+}
+
+output "website_url" {
+  value = "www.${var.domain_name}"
 }
