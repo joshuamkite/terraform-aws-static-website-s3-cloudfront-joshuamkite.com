@@ -17,7 +17,7 @@ variable "tags" {
   }
 }
 
-variable "custom_error_response" {
+variable "cloudfront_custom_error_responses" {
   type = list(any)
   default = [
     {

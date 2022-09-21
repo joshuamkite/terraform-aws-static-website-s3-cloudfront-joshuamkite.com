@@ -1,6 +1,5 @@
 module "static-website-s3-cloudfront-acm" {
-  # source                = "git@github.com:joshuamkite/terraform-aws-static-website-s3-cloudfront-acm.git"
-  source                = "../terraform-aws-static-website-s3-cloudfront-acm"
+  source                = "git@github.com:joshuamkite/terraform-aws-static-website-s3-cloudfront-acm.git"
   domain_name           = var.domain_name
   s3_bucket_custom_name = "${var.domain_name}-${var.region}-${data.aws_caller_identity.current.account_id}"
   providers = {
@@ -8,7 +7,7 @@ module "static-website-s3-cloudfront-acm" {
     aws           = aws
   }
   deploy_sample_content = true
-  custom_error_response = var.custom_error_response
+  cloudfront_custom_error_responses = var.cloudfront_custom_error_responses
 }
 
 data "aws_caller_identity" "current" {}
