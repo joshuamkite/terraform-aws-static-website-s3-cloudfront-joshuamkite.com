@@ -6,6 +6,8 @@ module "static-website-s3-cloudfront-acm" {
     aws.us-east-1 = aws.us-east-1
     aws           = aws
   }
+  deploy_sample_content = true
+  cloudfront_custom_error_responses = var.cloudfront_custom_error_responses
 }
 
 data "aws_caller_identity" "current" {}

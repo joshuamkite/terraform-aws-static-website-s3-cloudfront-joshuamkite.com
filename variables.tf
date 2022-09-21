@@ -16,3 +16,21 @@ variable "tags" {
     module_repo = "git@github.com:joshuamkite/terraform-aws-static-website-s3-cloudfront-acm.git"
   }
 }
+
+variable "cloudfront_custom_error_responses" {
+  type = list(any)
+  default = [
+    {
+      error_code            = 403
+      response_code         = 404
+      error_caching_min_ttl = 10
+      response_page_path    = "/404.html"
+    },
+    {
+      error_code            = 404
+      response_code         = 404
+      error_caching_min_ttl = 10
+      response_page_path    = "/404.html"
+    }
+  ]
+}
